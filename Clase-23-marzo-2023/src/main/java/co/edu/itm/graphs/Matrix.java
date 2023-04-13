@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class Matrix {
     private Scanner _scanner;
-    public Matrix() {
-    }
 
     public Matrix(Scanner scanner){
         _scanner = scanner;
