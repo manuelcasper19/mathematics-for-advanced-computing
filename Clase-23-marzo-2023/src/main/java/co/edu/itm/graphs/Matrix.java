@@ -20,7 +20,7 @@ public class Matrix {
         for (int i = 1; i <= rows; i++){
             List<Boolean> row = new ArrayList<>();
             for (int j = 1; j <= columns; j++){
-                System.out.println(String.format("Ingrese valor en la posicion %d, %d ", i, j));
+                System.out.printf("Ingrese valor en la posicion %d, %d %n", i, j);
                 boolean value = _scanner.nextBoolean();
                 row.add(value);
             }
@@ -57,4 +57,31 @@ public class Matrix {
             System.out.println();
         }
     }
+
+
+    public List<Integer> determineDegreeVertex(List<List<Boolean>> matrix){
+        List<Integer> degreeVertex = new ArrayList<>();
+        for (int i = 0; i < matrix.size(); i++){
+            int addition = 0;
+            for (int j = 0; j < matrix.get(i).size(); j++){
+                int number = (matrix.get(i).get(j)) ? 1 : 0;
+                addition+=number;
+            }
+            degreeVertex.add(addition);
+        }
+        return degreeVertex;
+    }
+
+//    public List<List<Integer>> convertMatrixToInteger(List<List<Boolean>> matrix){
+//        List<List<Integer>> matrixInteger = new ArrayList<>();
+//        for (int i = 0; i < matrix.size(); i++){
+//            List<Integer> dataTemp = new ArrayList<>();
+//            for (int j = 0; j < matrix.get(i).size(); j++){
+//                int value = (matrix.get(i).get(j)) ? 1 : 0;
+//                dataTemp.add(value);
+//            }
+//            matrixInteger.add(dataTemp);
+//        }
+//        return matrixInteger;
+//    }
 }
